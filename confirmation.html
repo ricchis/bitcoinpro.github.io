@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="https://bin.bnbstatic.com/static/images/common/favicon.ico">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <title>Bexchange Premium | Recipients confirmation</title>
+</head>
+<style>
+  body {
+    background: #F0B90B;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+  }
+  button {
+        background-color: #F0B90B;
+        border-radius: 5px;
+        min-width: 120px;
+        min-height: 44px;
+        cursor: pointer;
+        font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+  }
+    button:focus {
+        border: none;
+  }
+  .alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+</style>
+<body>
+  <br>
+  <div class="box">
+      <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Information confirmed<br></br></strong><i class='bx bx-info-circle'></i> Please re-confirm receiver's identity before sending any money. Kindly note
+        that funds sent cannot be reversed!</div>
+    <!------------  Bank-->
+    <p><b>Bank</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="bank" style="float: right;"></span></p>
+    <!--------  Account Number-->
+    <p><b>Account Number</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="number" style="float: right;"></span></p>
+    <!----------- Name -->
+    <p><b>Verified Name</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="name" style="float: right;"></span></p>
+    <!----------- Amount-->
+    <p><b>Amount</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="amount" style="float: right;"></span> </p>
+  </div>
+  <br>
+  <br>
+  <center>
+    <a href="activation.html">
+    <button type="button" class="btn" onclick="myFunction()">Confirm</button>
+    </a>
+  </center>
+  <script>
+    document.getElementById("amount").innerHTML = localStorage.getItem("textamount");
+    document.getElementById("number").innerHTML = localStorage.getItem("textvalue");
+    document.getElementById("name").innerHTML = localStorage.getItem("textname");
+    document.getElementById("bank").innerHTML = localStorage.getItem("textbank");
+
+
+    function myFunction() {
+      alert("Note that you will be paying a service fee of ₦10,000.00 Naira to approve this transaction!");
+    }
+  </script>
+
+<footer style="margin-top: 100%;">
+  <p style="text-align: center; font-weight: 600;">Note: You will be charged for this transaction!</p>
+</footer>
+</body>
+
+</html>
